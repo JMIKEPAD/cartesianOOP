@@ -71,4 +71,21 @@ console.log(tri1.perimeter);
 
 console.log(tri1.area);
 
-// let bev2 = new Bevanda(name: "chinotto", insertionDate: new Date())
+const startingPoint = new Point(0,0)
+
+const start = new Rectangle2(startingPoint, 5, 6);
+
+console.log(start.perimeter2);
+
+console.log(start.area2);
+
+const pointStartA = new Point (1, 6);
+
+const pointStartB = new Point (8, 1);
+
+ const rect2 = new RectangleDoublePoint(pointStartA, pointStartB); 
+
+console.log(rect2.perimeter);
+
+console.log(rect2.area);
+
