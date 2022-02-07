@@ -1,72 +1,74 @@
-// Le classi che contengono funzioni e non proprietà (come la classe Math, per esempio), quindi non vanno istanziate, si chiamano: Statiche
 
-// const result = Math.sqrt(64);
-// console.log(result);
+const pointA = new Point(3, 5);
 
-/*****************************************************************************/
+const pointB = new Point(6, 1);
 
-// const pointA = new Point(3, 5);
-// const pointB = new Point(6, 1);
+const pointC = new Point(7, 1);
 
-// /*--*/
+const pointD = new Point(3, 6);
 
-// const pointC = new Point(7, 1);
-// const pointD = new Point(3, 6);
-// const pointE = new Point(1, 1);
-// const pointF = new Point(-2, 1);
+const pointE = new Point(1, 1);
+
+const pointF = new Point(-2, 1);
 
 
-// // Metodi applicati dalla classe astratta MathC
+const distance = MathC.calculateDistance(pointA, pointB);
 
-// const distance = MathC.calculateDistance(pointA, pointB);
-// const medianPoint = MathC.medianPoint(pointA, pointB);
-// const distanceOrigin = MathC.distanceFromOrigin(pointA);
-// const nearest = MathC.nearestPoint(pointA, pointB, pointC, pointD, pointE, pointF);
+const medianPoint = MathC.medianPoint(pointA, pointB);
 
-// console.log("METODI DELLA CLASSE MathC.\n\n");
-// console.log("- Distanza tra A e B: ", distance);
-// console.log("- Punto medio tra A e B: ", medianPoint);
-// console.log("- Distanza tra A e origine: ", distanceOrigin);
-// console.log("- Più vicino ad A tra B -> F: ", nearest);
+const distanceFromOrigin = MathC.distanceFromOrigin(pointA);
 
-// /****/
+const nearest = MathC.nearestPoint(pointA, pointB, pointC, pointD, pointE, pointF);
 
-// // Metodi applicati dalla classe Point
 
-// const distanceP = pointA.distanceFrom(pointB);
-// const medianPointP = pointA.medianPointFromPoint(pointB);
-// const distanceOriginP = pointA.distanceFromOrigin();
-// const nearestP = pointA.nearestPoint(pointB, pointC, pointD, pointE, pointF);
+console.log(distance);
 
-// console.log("\nMETODI DELLA CLASSE Point.\n\n");
-// console.log("- Distanza tra A e B: ", distanceP);
-// console.log("- Punto medio tra A e B: ", medianPointP);
-// console.log("- Distanza tra A e origine: ", distanceOriginP);
-// console.log("- Più vicino ad A tra B -> F: ", nearestP);
+console.log(medianPoint);
 
-/*****************************************************************************/
 
-const segment1 = new Segment(3, 5, 6, 1);
+const distanceFromB = pointA.distanceFrom(pointB);
 
-console.log(segment1.length);
+console.log(distanceFromB);
 
-console.log(segment1.mediumPoint);
+const distanceFromOriginOfA = pointA.distanceFromOrigin();
 
-/*****************************************************************************/
+console.log(distanceFromOriginOfA);
 
-const verticeInfSx = new Point(3, 2);
-const verticeSupSx = new Point(3, 6);
-const verticeSupDx = new Point(8, 2);
-const verticeInfDx = new Point(8, 6);
+const medianFromB = pointA.medianPointFromPoint(pointB);
 
-const rectangle1 = new Rectangle(verticeInfSx, verticeSupSx, verticeSupDx, verticeInfDx);
+console.log(medianFromB);
 
-console.log(rectangle1.perimetro);
+const nearestToA = pointA.nearestPoint(pointB, pointC, pointD, pointE);
 
-console.log(rectangle1.area);
+console.log(nearestToA);
 
-// h = 4
 
-// b = 5
+const seg1 = new Segment(pointA, pointB);
 
-// p = 18 / a = 20
+console.log(seg1.length);
+
+console.log(seg1.median);
+
+const topLeft = new Point(1, 6);
+const topRight = new Point(8, 6);
+const bottomRight = new Point(8, 1);
+const bottomLeft = new Point(1, 1);
+
+const rect1 = new Rectangle(topLeft, topRight, bottomRight, bottomLeft);
+
+console.log(rect1.perimeter);
+
+console.log(rect1.area);
+
+
+const point1 = new Point(1, 1);
+const point2 = new Point(1, 5);
+const point3= new Point(4, 1);
+
+const tri1 = new Triangle(point1, point2, point3);
+
+console.log(tri1.perimeter);
+
+console.log(tri1.area);
+
+// let bev2 = new Bevanda(name: "chinotto", insertionDate: new Date())

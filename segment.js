@@ -1,22 +1,16 @@
-class Segment {
+class Segment{
 
-    constructor(xStart, yStart, xEnd, yEnd) {
-        this.xStart = xStart;
-        this.xEnd = xEnd;
-        this.yStart = yStart;
-        this.yEnd = yEnd;
+    constructor(point1, point2){
+        this.point1 = point1;
+        this.point2 = point2;
     }
 
-    get length() {
-        const pointStart = new Point(this.xStart, this.yStart);
-        const pointEnd = new Point(this.xEnd, this.yEnd);
-        return MathC.calculateDistance(pointStart, pointEnd);
+    get length(){
+        return this.point1.distanceFrom(this.point2);
     }
 
-    get mediumPoint() {
-        const pointStart = new Point(this.xStart, this.yStart);
-        const pointEnd = new Point(this.xEnd, this.yEnd);
-        return MathC.medianPoint(pointStart, pointEnd);
+    get median(){
+        return this.point1.medianPointFromPoint(this.point2);
     }
 
 }

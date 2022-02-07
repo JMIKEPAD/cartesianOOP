@@ -1,22 +1,23 @@
 class Rectangle {
 
-    constructor(infSx, supSx, supDx, infDx) {
-        this.infSx = infSx;
-        this.supSx = supSx;
-        this.supDx = supDx;
-        this.infDx = infDx;
+    constructor(topLeft, topRight, bottomRight, bottomLeft) {
+        this.topLeft = topLeft;
+        this.topRight = topRight;
+        this.bottomRight = bottomRight;
+        this.bottomLeft = bottomLeft;
     }
 
-    get perimetro() {
-        const base = this.infDx.x - this.infSx.x;
-        const altezza = this.supSx.y - this.infSx.y;
-        return 2 * (base + altezza);
+
+    get perimeter(){
+        return this.topLeft.distanceFrom(this.topRight)
+             + this.topRight.distanceFrom(this.bottomRight)
+             + this.bottomRight.distanceFrom(this.bottomLeft)
+             + this.bottomLeft.distanceFrom(this.topLeft); 
     }
 
-    get area() {
-        const base = this.infDx.x - this.infSx.x;
-        const altezza = this.supSx.y - this.infSx.y;
-        return base * altezza;
+    get area(){
+        return this.bottomRight.distanceFrom(this.bottomLeft)
+             * this.bottomRight.distanceFrom(this.topRight); 
     }
 
 }
