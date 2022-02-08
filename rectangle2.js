@@ -1,20 +1,41 @@
-class Rectangle2 {
-    constructor (startingPoint, w, h){
-        this.startingPoint = startingPoint;
-        this.w = w;
-        this.h = h;
-        this.topRight = new Point ((this.startingPoint.x + this.w), this.startingPoint.y);
-        this.bottomRight = new Point ((this.topRight.y + this.h), this.topRight.x);
-        this.bottomLeft = new Point (( this.bottomRight.x - w), this.bottomRight.y);
+class Rectangle2{
+
+    constructor(topLeft, bottomRight) {
+        this.topLeft = topLeft
+        this.bottomRight = bottomRight;
+        this.topRight = new Point(this.bottomRight.x, this.topLeft.y);
+        this.bottomLeft = new Point(topLeft.x, bottomRight.y);
     }
 
-    get perimeter2(){
-        return (this.w + this.h) * 2
+    // static generateTopRightPoint(topLeft, bottomRight){
+    //     return new Point(bottomRight.x, topLeft.y);
+    // }
+
+    get perimeter(){
+        return this.topLeft.distanceFrom(this.topRight)
+             + this.topRight.distanceFrom(this.bottomRight)
+             + this.bottomRight.distanceFrom(this.bottomLeft)
+             + this.bottomLeft.distanceFrom(this.topLeft); 
     }
 
-    get area2(){
-        return this.w * this.h;
+    calculatePerimeter(){
+        return this.topLeft.distanceFrom(this.topRight)
+             + this.topRight.distanceFrom(this.bottomRight)
+             + this.bottomRight.distanceFrom(this.bottomLeft)
+             + this.bottomLeft.distanceFrom(this.topLeft); 
     }
 
+    get area(){
+        return this.bottomRight.distanceFrom(this.bottomLeft)
+             * this.bottomRight.distanceFrom(this.topRight);
+    }
 
+}
+
+
+class Square extends Rectangle2{
+    constructor(topLeft, side){
+        super(topLeft, new Point(topLeft.x + side, topLeft.y + side));
+        this.side = side;
+    }
 }
