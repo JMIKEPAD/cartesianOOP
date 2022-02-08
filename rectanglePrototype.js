@@ -29,6 +29,6 @@ function Squa(topLeft, side){
     // this.bottomLeft = new Point(this.topLeft.x, this.bottomRight.y);
     Rect.call(this, topLeft, new Point(topLeft.x + side, topLeft.y + side))
     this.side = side;
-    Object.setPrototypeOf(Quad.prototype, Rect.prototype);
+    Object.setPrototypeOf(Squa.prototype, Rect.prototype);
 }
 

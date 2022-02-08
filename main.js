@@ -102,12 +102,31 @@ const mappa = new Map();
 
 const rect3 = new Rect(tl, br);
 
+const tri = new Triang(point1,point2,point3);
 
-const quad1 = new Quadrato(tl, 6);
+const tri2 = new Triangle(point1,point2,point3);
 
-const quad2 = new Quad(tl, 6);
+const tri3 = new RightTriang(point1,point2,point3);
+
+const tri4 = new RightTriangle(point1,point2,point3);
+
+const quad1 = new Square(tl, 6);
+
+const quad2 = new Squa(tl, 6);
 
 
-console.log("con classe", quad1)
+console.log("con classe", quad1);
 console.log("con prototipo", quad2);
 
+console.log("con classe", tri);
+console.log("con prototipo", tri2);
+
+console.log("con classe", tri3);
+console.log("con prototipo", tri4);
+
+
+const range = new Range(0, 10, 2);
+
+for (const number of range) {
+    console.log(number);
+}
